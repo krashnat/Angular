@@ -8,17 +8,20 @@
                 <mat-form-field appearance="outline">
                     <mat-label>Username</mat-label>
                     <input matInput placeholder="email" formControlName="username" [(ngModel)]=username>
+                   
                     <mat-icon matSuffix>email</mat-icon>
+                    
                 </mat-form-field>
-                
+
             </p>
-            
+
 
 
             <p>
                 <mat-form-field appearance="outline">
                     <mat-label>Password</mat-label>
-                    <input matInput placeholder="password" type="password" formControlName="password" [(ngModel)]=username>
+                    <input matInput placeholder="password" type="password" formControlName="password"
+                        [(ngModel)]=password>
                     <mat-icon matSuffix>lock</mat-icon>
 
                 </mat-form-field>
@@ -27,7 +30,7 @@
                 <div><button mat-raised-button>Submit</button></div>
                 <!-- <div><a href=sendmail>Forgod Password ?</a></div> -->
                 <nav>
-                    <a routerLink="/sendmail">Forgod Password ?</a> 
+                    <a routerLink="/sendmail">Forgod Password ?</a>
                 </nav>
             </div>
         </div>

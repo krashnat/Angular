@@ -12,7 +12,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { PasswordUpdateComponent } from './password-update/password-update.component';
 import { UpdateComponent } from './update/update.component';
-import { InformUserComponent } from './inform-user/inform-user.component'; 
+import { InformUserComponent } from './inform-user/inform-user.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { NotesComponent } from './components/notes/notes.component'; 
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { InformUserComponent } from './inform-user/inform-user.component';
     ConfirmationComponent,
     PasswordUpdateComponent,
     UpdateComponent,
-    InformUserComponent
+    InformUserComponent,
+    DashboardComponent,
+    NotesComponent,
+    FlexLayoutModule
   ],
   imports: [
     BrowserModule,
@@ -31,7 +37,8 @@ import { InformUserComponent } from './inform-user/inform-user.component';
     MaterialModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FlexLayoutModule
 
   ],
   providers: [],

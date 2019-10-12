@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
 
     this.loginForm = new FormGroup(
       {
-        username: new FormControl('', [Validators.required]),
+        username: new FormControl('', [Validators.required,Validators.minLength(3)]),
         password: new FormControl('', [Validators.required])
       });
 
@@ -32,19 +32,21 @@ export class LoginComponent implements OnInit {
 
     this.userservice.login(this.loginForm.value).subscribe((response: any) => {
       console.log(response.message);
-      console.log(response.statusCode);
-      if (response.statusCode === 200) {
-        this.router.navigate(['/verification']);
-      } else {
-        this.router.navigate(['/login']);
-        this.errorMessage = response.message;
-        this.username = '';
-        this.password = '';
-      }
+      console.log(response.statuscode);
+      if (response.statuscode === 200) {
+        localStorage.setItem('token', response.token);
+        this.router.navigate(['/dashboard']);
+       } //else {
+      //   this.router.navigate(['/login']);
+      //   this.errorMessage = response.message;
+      //   this.username = '';
+      //   this.password = '';
+      // }
     },
       error => {
+        this.router.navigate(['/login']);
         this.loading = false;
-        this.errorMessage = 'username or password not correct';
+        this.errorMessage = 'invalid credentials';
         this.username = '';
         this.password = '';
       }

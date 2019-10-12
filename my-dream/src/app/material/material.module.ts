@@ -1,10 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {MatFormFieldModule} from '@angular/material/form-field'; 
-import {MatIconModule} from '@angular/material/icon'; 
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatButtonModule} from '@angular/material/button'; 
+import {MatButtonModule} from '@angular/material/button';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatCardModule} from '@angular/material/card';
+import {FlexLayoutModule} from '@angular/flex-layout';
+
 @NgModule({
   declarations: [],
   imports: [
@@ -13,14 +18,23 @@ import {MatButtonModule} from '@angular/material/button';
     CommonModule,
     MatIconModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSidenavModule,
+    MatDividerModule,
+    MatCardModule,
+    FlexLayoutModule
+
   ],
   exports: [
     MatInputModule,
     MatFormFieldModule,
     MatIconModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSidenavModule,
+    MatDividerModule,
+    MatCardModule,
+    FlexLayoutModule
   ]
 })
 export class MaterialModule { }

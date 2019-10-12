@@ -6,6 +6,7 @@ import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { PasswordUpdateComponent } from './password-update/password-update.component';
 import { UpdateComponent } from './update/update.component';
 import { InformUserComponent } from './inform-user/inform-user.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'verification', component: ConfirmationComponent },
   { path: 'sendmail', component: PasswordUpdateComponent },
   { path: 'updatePassword/:token', component: UpdateComponent },
-  { path: 'informUser', component: InformUserComponent }
+  { path: 'informUser', component: InformUserComponent },
+  { path: 'dashboard', component: DashboardComponent }
 
 
 
