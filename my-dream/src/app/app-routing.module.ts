@@ -7,6 +7,7 @@ import { PasswordUpdateComponent } from './password-update/password-update.compo
 import { UpdateComponent } from './update/update.component';
 import { InformUserComponent } from './inform-user/inform-user.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { NoteComponent } from './components/note/note.component';
 
 
 
@@ -18,7 +19,10 @@ const routes: Routes = [
   { path: 'sendmail', component: PasswordUpdateComponent },
   { path: 'updatePassword/:token', component: UpdateComponent },
   { path: 'informUser', component: InformUserComponent },
-  { path: 'dashboard', component: DashboardComponent }
+  { path: 'dashboard', component: DashboardComponent,
+  children: [
+    { path: '', component: NoteComponent }]
+}
 
 
 

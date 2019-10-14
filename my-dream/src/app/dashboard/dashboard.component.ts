@@ -11,6 +11,7 @@ export class DashboardComponent implements OnInit {
   title = 'Keep';
   name = 'first';
   listLabels: [];
+  popup: boolean;
   token: string;
   constructor(
     private labelService: LabelService
@@ -35,4 +36,6 @@ export class DashboardComponent implements OnInit {
     });
 
   }
+
+ 
 }

@@ -14,8 +14,9 @@ import { PasswordUpdateComponent } from './password-update/password-update.compo
 import { UpdateComponent } from './update/update.component';
 import { InformUserComponent } from './inform-user/inform-user.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { NotesComponent } from './components/notes/notes.component'; 
-import { FlexLayoutModule } from "@angular/flex-layout";
+import { NotesComponent } from './components/notes/notes.component';
+import { NoteComponent } from './components/note/note.component';
+//import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     InformUserComponent,
     DashboardComponent,
     NotesComponent,
-    FlexLayoutModule
+    NoteComponent,
+    //FlexLayoutModule
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    FlexLayoutModule
+    //lexLayoutModule
 
   ],
   providers: [],

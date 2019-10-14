@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup,FormControl, Validators} from '@angular/forms'
+import { FormGroup, FormControl, Validators } from '@angular/forms'
 import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
 
@@ -9,37 +9,39 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
- 
-  registerForm:FormGroup;
-  loading= true;
-  
+
+  registerForm: FormGroup;
+  loading = true;
+
   constructor(private userservice: UserService,
-    private router:Router) { }
-  
+    private router: Router) { }
+
 
   ngOnInit() {
-    this.registerForm=new FormGroup(
+    this.registerForm = new FormGroup(
       {
-        name: new FormControl('',[Validators.required]),
-        password: new FormControl('',[Validators.required]),
-        mobNo: new FormControl('',[Validators.required]),
-        email: new FormControl('',[Validators.required]),
-        
+        name: new FormControl('', [Validators.required]),
+        password: new FormControl('', [Validators.required, Validators.minLength(4)]),
+        mobNo: new FormControl('', [Validators.required, Validators.pattern('[6-9]\\d{9}')]),
+        email: new FormControl('', [Validators.required]),
+
       }
     );
   }
-  onSubmit(){
+  onSubmit() {
     console.log(this.registerForm.value);
-
-     this.userservice.registration(this.registerForm.value).subscribe((response: any)=>{
-       console.log(response.message);
-       this.router.navigate(['/login']);
-      },
+    if (this.registerForm.invalid) {
+      return this.router.navigate(['/register']);
+    }
+    this.userservice.registration(this.registerForm.value).subscribe((response: any) => {
+      console.log(response.message);
+      this.router.navigate(['/login']);
+    },
       error => {
         this.loading = false;
       }
     );
-     }
   }
+}
 
 
