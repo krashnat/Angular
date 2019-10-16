@@ -8,6 +8,7 @@ import { UpdateComponent } from './update/update.component';
 import { InformUserComponent } from './inform-user/inform-user.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NoteComponent } from './components/note/note.component';
+import { DisplayNotesComponent } from './components/display-notes/display-notes.component';
 
 
 
@@ -22,11 +23,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent,
   children: [
     { path: '', component: NoteComponent }]
-}
-
-
-
-];
+}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

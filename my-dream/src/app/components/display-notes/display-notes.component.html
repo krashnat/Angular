@@ -1,0 +1,19 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+    <div>
+        <div *ngFor="let note of listNotes" class="noteCard">
+            <mat-card >
+                <!-- <mat-card (click)="opendialog(note)" class="mat" > -->
+                <mat-card-title >
+                    <textarea  cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+                        cdkAutosizeMaxRows="100">{{note.title}}</textarea>
+                </mat-card-title>
+                <mat-card-content >
+                    <textarea  cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+                        cdkAutosizeMaxRows="100">{{note.description}}</textarea>
+                </mat-card-content>
+                <!-- <app-dialogbox [note]='note'></app-dialogbox> -->
+                <!-- </mat-card> -->
+            </mat-card>
+        </div>
+    </div>
+</div>

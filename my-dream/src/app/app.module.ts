@@ -14,8 +14,10 @@ import { PasswordUpdateComponent } from './password-update/password-update.compo
 import { UpdateComponent } from './update/update.component';
 import { InformUserComponent } from './inform-user/inform-user.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { NotesComponent } from './components/notes/notes.component';
+
 import { NoteComponent } from './components/note/note.component';
+import { FullcomponentComponent } from './components/fullcomponent/fullcomponent.component';
+import { DisplayNotesComponent } from './components/display-notes/display-notes.component';
 //import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
@@ -28,8 +30,10 @@ import { NoteComponent } from './components/note/note.component';
     UpdateComponent,
     InformUserComponent,
     DashboardComponent,
-    NotesComponent,
+    
     NoteComponent,
+    FullcomponentComponent,
+    DisplayNotesComponent,
     //FlexLayoutModule
   ],
   imports: [

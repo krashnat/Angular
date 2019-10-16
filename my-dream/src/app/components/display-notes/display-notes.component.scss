@@ -1,0 +1,33 @@
+// .notes{
+//     margin-left: 150px;
+//     margin-right: 150px;
+// }
+.textarea {
+    border: 0px;
+    outline: 0px;
+
+}
+
+
+noteTitle {
+    margin-top: none;
+    border: none;
+    outline: none;
+    width: 500px;
+    height: auto;
+    padding-left: 18px;
+    padding-right: 0px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    display: flex;
+}
+.noteCard {
+   align-items: center;
+   border: none;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   float : left;
+   padding-left: 40px;
+} 
+

@@ -1,32 +1,33 @@
-<div fxLayout="row" fxLayoutAlign="space-around center">
-    <div (click)=expandIt() *ngIf="!expand">
-        <mat-card (click)="expandField()" class="noteEditCard">
-            <mat-card-content class="matcard">
-                <span>Take note.....</span>
-                <button mat-icon-button style="margin-left: 400px">
-                </button>
-            </mat-card-content>
-        </mat-card>
+<form [formGroup]="noteForm">
+    <div fxLayout="row" fxLayoutAlign="space-around center">
+        <div (click)=expandIt() *ngIf="!expand">
+            <mat-card (click)="expandField()" class="noteEditCard">
+                <mat-card-content class="matcard">
+                    <span>Take note.....</span>
+                    <button mat-icon-button style="margin-left: 400px">
+                    </button>
+                </mat-card-content>
+            </mat-card>
+        </div>
     </div>
-</div>
 
-<div *ngIf="expand">
-    <div fxLayout="row" fxLayoutAlign="center center">
-        <mat-card class="noteFields">
+    <div *ngIf="expand">
+        <div fxLayout="row" fxLayoutAlign="center center">
 
-            <mat-card-header class="Header">
-                <mat-card-title>
+            <mat-card class="noteFields">
+                    <mat-card-header class="Header">
+                        <mat-card-title>
 
-                    <textarea class="tittleField" matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize"
-                        cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5" placeholder="Title..."></textarea>
-                    <div class="pinIcon">
+                            <textarea class="tittleField" matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize"
+                                cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5" placeholder="Title..." formControlName="title"></textarea>
+                            <div class="pinIcon">
 
-                        <button mat-button>
-                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 53.011 53.011"
-                                style="enable-background:new 0 0 53.011 53.011;" xml:space="preserve" height=24px
-                                width=24px>
-                                <path d="M52.963,21.297c-0.068-0.329-0.297-0.603-0.609-0.727c-8.574-3.416-16.173-0.665-18.361,0.288L19.114,8.2
+                                <button mat-button>
+                                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                        viewBox="0 0 53.011 53.011" style="enable-background:new 0 0 53.011 53.011;"
+                                        xml:space="preserve" height=24px width=24px>
+                                        <path d="M52.963,21.297c-0.068-0.329-0.297-0.603-0.609-0.727c-8.574-3.416-16.173-0.665-18.361,0.288L19.114,8.2
                            c0.52-4.568-1.944-7.692-2.054-7.828C16.881,0.151,16.618,0.016,16.335,0c-0.282-0.006-0.561,0.091-0.761,0.292L0.32,15.546
                            c-0.202,0.201-0.308,0.479-0.291,0.765c0.016,0.284,0.153,0.549,0.376,0.726c2.775,2.202,6.349,2.167,7.726,2.055l12.721,14.953
                            c-0.868,2.23-3.52,10.27-0.307,18.337c0.124,0.313,0.397,0.541,0.727,0.609c0.067,0.014,0.135,0.021,0.202,0.021
@@ -37,29 +38,46 @@
                            c0.604,1.156,1.391,3.26,0.964,5.848C17.004,8.79,17.133,9.141,17.4,9.368l15.785,13.43c0.309,0.262,0.748,0.309,1.105,0.128
                            c0.077-0.04,7.378-3.695,15.869-1.017L35.314,36.755z" />
 
-                            </svg>
-                        </button>
+                                    </svg>
+                                </button>
+                            </div>
+                        </mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content class="matcardHeader">
+                        <textarea class="textField" matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize"
+                            cdkAutosizeMinRows="1" cdkAutosizeMaxRows="15" placeholder="Take a note..." formControlName="description"></textarea>
+                    </mat-card-content>
+                    <div>
+                        <div class="bottomButtons">
+                            <button mat-icon-button class="notification">
+                                <mat-icon>notifications_paused</mat-icon>
+                            </button>
+                            <button mat-icon-button class="notification">
+                                <mat-icon>person_add</mat-icon>
+                            </button>
+                            <button mat-icon-button class="notification">
+                                <mat-icon>color_lens</mat-icon>
+                            </button>
+                            <button mat-icon-button class="notification">
+                                <mat-icon>photo_library</mat-icon>
+                            </button>
+                            
+                            <div class="submit" (click)="ngOnclose()">
+                                    <button mat-button>close</button>
+                                </div>
+                            
+                        </div>
                     </div>
-                </mat-card-title>
-            </mat-card-header>
-
-            <mat-card-content class="matcardHeader">
-                <textarea class="textField" matInput cdkTextareaAutosize #autosize="cdkTextareaAutosize"
-                    cdkAutosizeMinRows="1" cdkAutosizeMaxRows="15" placeholder="Take a note..."></textarea>
-            </mat-card-content>
-
-            <div class="submit" (ngSubmit)="onSubmit()">
-                <button mat-button>close</button>
+                </mat-card>
+                
+                
             </div>
             
-                <button class="remIcon" mat-raised-button>
-                    <mat-icon class="noteIcon">lightbulb_outline</mat-icon>
-                </button>
-           
-
-        </mat-card>
-
-
-    </div>
-
+        </div>
+        
+    </form>
+    
+<div class="popup" fxLayout="column" fxLayoutAlign="space-between center" > 
+        <app-display-notes></app-display-notes>
 </div>
