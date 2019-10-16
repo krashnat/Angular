@@ -24,4 +24,8 @@ export class NoteServiceService {
     return this.http.get('http://localhost:8080/note/fetchNote',  this.httpOptions);
   }
 
+  // public updateNote(note: any, id: any) {
+  //   return this.http.get('http://localhost:8080/note/fetchNote',this.note,  this.httpOptions);
+  // }
+
 }

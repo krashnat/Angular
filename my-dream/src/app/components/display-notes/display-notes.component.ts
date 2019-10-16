@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NoteServiceService } from 'src/app/services/note-service.service';
+import { MatDialog } from '@angular/material';
+import { EditnoteComponent } from '../editnote/editnote.component';
 
 @Component({
   selector: 'app-display-notes',
@@ -8,8 +10,8 @@ import { NoteServiceService } from 'src/app/services/note-service.service';
 })
 export class DisplayNotesComponent implements OnInit {
 
-  constructor(private noteService: NoteServiceService) { }
-
+  constructor(private noteService: NoteServiceService, private dialog: MatDialog) { }
+  private expand: any = false;
   listNotes: [];
 
   ngOnInit() {
@@ -24,5 +26,14 @@ export class DisplayNotesComponent implements OnInit {
     });
 
   }
+
+  openPopup(note: any) {
+    console.log(note.title);
+    const dialogRef = this.dialog.open(EditnoteComponent, {
+      data:  note
+    });
+  }
+
+
 
 }

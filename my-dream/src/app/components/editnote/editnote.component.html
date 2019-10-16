@@ -1,0 +1,38 @@
+<form [formGroup]="noteForm">
+    <mat-card style="margin-left:0px" autocomplete="off" role="combobox" flex="column">
+
+        <mat-card-title class="content">
+            <textarea class="textArea" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+                cdkAutosizeMaxRows="100" placeholder="Title" formControlName="title">{{note.title}}</textarea>
+        </mat-card-title>
+        <mat-card-content class="content">
+            <textarea class="textArea" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+                cdkAutosizeMaxRows="100" placeholder="Description"
+                formControlName="description">{{note.description}}</textarea>
+        </mat-card-content>
+
+
+        <div class="matCardFooter">
+
+            <mat-card-footer>
+                
+                    <button mat-icon-button>
+                        <mat-icon>add_alert</mat-icon>
+                    </button>
+                    <button mat-icon-button>
+                        <mat-icon>insert_photo</mat-icon>
+                    </button>
+                    <button mat-icon-button>
+                        <mat-icon>archive</mat-icon>
+                    </button>
+                    <button mat-icon-button>
+                        <mat-icon>person_add</mat-icon>
+                    </button>
+                 <div class="submit" (click)="ngOnclose()">
+                    <button mat-button>close</button>
+                </div>
+
+            </mat-card-footer>
+        </div>
+    </mat-card>
+</form>

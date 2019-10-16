@@ -18,7 +18,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NoteComponent } from './components/note/note.component';
 import { FullcomponentComponent } from './components/fullcomponent/fullcomponent.component';
 import { DisplayNotesComponent } from './components/display-notes/display-notes.component';
-//import { FlexLayoutModule } from '@angular/flex-layout';
+import { EditnoteComponent } from './components/editnote/editnote.component';
+
 
 @NgModule({
   declarations: [
@@ -30,11 +31,10 @@ import { DisplayNotesComponent } from './components/display-notes/display-notes.
     UpdateComponent,
     InformUserComponent,
     DashboardComponent,
-    
     NoteComponent,
     FullcomponentComponent,
     DisplayNotesComponent,
-    //FlexLayoutModule
+    EditnoteComponent
   ],
   imports: [
     BrowserModule,
@@ -43,10 +43,11 @@ import { DisplayNotesComponent } from './components/display-notes/display-notes.
     MaterialModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule,
-    //lexLayoutModule
+    HttpClientModule
+
 
   ],
+  entryComponents: [EditnoteComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

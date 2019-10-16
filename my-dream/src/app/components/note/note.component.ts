@@ -25,18 +25,18 @@ export class NoteComponent implements OnInit {
   }
   ngOnclose() {
     console.log(this.noteForm.value);
-    // this.noteService.createNote(this.noteForm.value).subscribe((response: any) => {
-    //   console.log(response.message);
-    //   console.log(response.statuscode);
-    //   if (response.statuscode === 200) {
-    //    console.log(response.note);
-       }
-    // },
-    //   error => {
-    
-    //   }
-    // );
+    this.noteService.createNote(this.noteForm.value).subscribe((response: any) => {
+      console.log(response.message);
+      console.log(response.statuscode);
+      if (response.statuscode === 200) {
+        console.log(response.note);
+      }
+    },
+      error => {
 
-  // }
+      }
+    );
+
+  }
 
 }

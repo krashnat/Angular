@@ -1,18 +1,43 @@
 <div fxLayout="row" fxLayoutAlign="center center">
     <div>
         <div *ngFor="let note of listNotes" class="noteCard">
-            <mat-card >
-                <!-- <mat-card (click)="opendialog(note)" class="mat" > -->
-                <mat-card-title >
-                    <textarea  cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
-                        cdkAutosizeMaxRows="100">{{note.title}}</textarea>
-                </mat-card-title>
-                <mat-card-content >
-                    <textarea  cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
-                        cdkAutosizeMaxRows="100">{{note.description}}</textarea>
-                </mat-card-content>
-                <!-- <app-dialogbox [note]='note'></app-dialogbox> -->
-                <!-- </mat-card> -->
+
+            <mat-card  class="matcard" style="margin-left:90px" autocomplete="off" role="combobox" flex="column">
+                <div (click)="openPopup(note)">
+                    <mat-card-title class="content">
+                        <textarea class="textArea" cdkTextareaAutosize #autosize="cdkTextareaAutosize"
+                            cdkAutosizeMinRows="1" cdkAutosizeMaxRows="100" placeholder="Title"
+                            disabled>{{note.title}}</textarea>
+                    </mat-card-title>
+                    <mat-card-content class="content">
+                        <textarea class="textArea" cdkTextareaAutosize #autosize="cdkTextareaAutosize"
+                            cdkAutosizeMinRows="1" cdkAutosizeMaxRows="100" placeholder="Description"
+                            disabled>{{note.description}}</textarea>
+                    </mat-card-content>
+                </div>
+                <div ng-mouseover="expand=true" ng-init="expand=false">
+                    <!-- <div *ngIf="expand"> -->
+                        <div class="matCardFooter">
+                            <mat-card-footer>
+                                <button mat-icon-button>
+                                    <mat-icon>add_alert</mat-icon>
+                                </button>
+                                <button mat-icon-button>
+                                    <mat-icon>insert_photo</mat-icon>
+                                </button>
+                                <button mat-icon-button>
+                                    <mat-icon>archive</mat-icon>
+                                </button>
+                                <button mat-icon-button>
+                                    <mat-icon>person_add</mat-icon>
+                                </button>
+                                <button mat-icon-button>
+                                    close
+                                </button>
+                            </mat-card-footer>
+                        </div>
+                  <!-- </div> -->
+                </div>
             </mat-card>
         </div>
     </div>
