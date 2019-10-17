@@ -19,6 +19,7 @@ import { NoteComponent } from './components/note/note.component';
 import { FullcomponentComponent } from './components/fullcomponent/fullcomponent.component';
 import { DisplayNotesComponent } from './components/display-notes/display-notes.component';
 import { EditnoteComponent } from './components/editnote/editnote.component';
+import { TrashComponent } from './components/trash/trash.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { EditnoteComponent } from './components/editnote/editnote.component';
     NoteComponent,
     FullcomponentComponent,
     DisplayNotesComponent,
-    EditnoteComponent
+    EditnoteComponent,
+    TrashComponent
   ],
   imports: [
     BrowserModule,

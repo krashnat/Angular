@@ -1,0 +1,32 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+    <div>
+        <!-- <div *ngFor="let note of listNotes class="noteCard"> -->
+
+        <mat-card class="matcard" style="margin-left:90px" autocomplete="off" role="combobox" flex="column">
+            <!-- <div (click)="openPopup(note)"> -->
+            <mat-card-title class="content">
+                <textarea class="textArea" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+                    cdkAutosizeMaxRows="100" placeholder="Title" disabled></textarea>
+            </mat-card-title>
+            <mat-card-content class="content">
+                <textarea class="textArea" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+                    cdkAutosizeMaxRows="100" placeholder="Description" disabled>Title</textarea>
+            </mat-card-content>
+            <!-- </div> -->
+            <!-- <div ng-mouseover="expand=true" ng-init="expand=false"> -->
+                <!-- <div *ngIf="expand"> -->
+                    <div class="matCardFooter">
+                        <mat-card-footer>
+
+                            <mat-menu #menu="matMenu">
+                                <button mat-menu-item>Delete Note</button>
+                                <button mat-menu-item>Restore</button>
+                            </mat-menu>
+                        </mat-card-footer>
+                    </div>
+                <!-- </div> -->
+            <!-- </div> -->
+        </mat-card>
+        <!-- </div> -->
+    </div>
+</div>

@@ -28,12 +28,18 @@ export class DisplayNotesComponent implements OnInit {
   }
 
   openPopup(note: any) {
-    console.log(note.title);
     const dialogRef = this.dialog.open(EditnoteComponent, {
       data:  note
     });
   }
+  deletenote(note, noteindex) {
+    this.listNotes.splice(noteindex, 1);
+    this.noteService.deleteNote(note).subscribe((response: any) => {
+    console.log('in delete note response' + response.statusCode);
+    });
 
+
+  }
 
 
 }

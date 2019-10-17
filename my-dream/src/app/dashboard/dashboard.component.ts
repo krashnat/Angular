@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { tokenName } from '@angular/compiler';
 import { LabelService } from '../services/label.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,7 +15,7 @@ export class DashboardComponent implements OnInit {
   popup: boolean;
   token: string;
   constructor(
-    private labelService: LabelService
+    private labelService: LabelService, private router: Router
   ) { }
   show = true;
   ngOnInit() {
@@ -36,6 +37,10 @@ export class DashboardComponent implements OnInit {
     });
 
   }
+  navigateToTrash() {
+   this.router.navigate(['dashboard/trash']);
 
- 
+  }
+
+
 }

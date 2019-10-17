@@ -9,6 +9,7 @@ import { InformUserComponent } from './inform-user/inform-user.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NoteComponent } from './components/note/note.component';
 import { DisplayNotesComponent } from './components/display-notes/display-notes.component';
+import { TrashComponent } from './components/trash/trash.component';
 
 
 
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path: 'informUser', component: InformUserComponent },
   { path: 'dashboard', component: DashboardComponent,
   children: [
-    { path: '', component: NoteComponent }]
+    { path: '', component: NoteComponent },
+  { path: 'trash', component: TrashComponent}]
 }];
 
 @NgModule({

@@ -3,12 +3,12 @@
 
         <mat-card-title class="content">
             <textarea class="textArea" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
-                cdkAutosizeMaxRows="100" placeholder="Title" formControlName="title">{{note.title}}</textarea>
+                cdkAutosizeMaxRows="100" placeholder="Title" formControlName="title" [(ngModel)]="note.title">{{note.title}}</textarea>
         </mat-card-title>
         <mat-card-content class="content">
             <textarea class="textArea" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
                 cdkAutosizeMaxRows="100" placeholder="Description"
-                formControlName="description">{{note.description}}</textarea>
+                formControlName="description" [(ngModel)]="note.description">{{note.description}}</textarea>
         </mat-card-content>
 
 

@@ -24,6 +24,7 @@ export class NoteComponent implements OnInit {
 
   }
   ngOnclose() {
+    if (this.noteForm.value.title !== '' &&  this.noteForm.value.description !== '' ) {
     console.log(this.noteForm.value);
     this.noteService.createNote(this.noteForm.value).subscribe((response: any) => {
       console.log(response.message);
@@ -38,5 +39,5 @@ export class NoteComponent implements OnInit {
     );
 
   }
-
+  }
 }

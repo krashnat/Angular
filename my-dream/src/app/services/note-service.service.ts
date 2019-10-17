@@ -24,8 +24,13 @@ export class NoteServiceService {
     return this.http.get('http://localhost:8080/note/fetchNote',  this.httpOptions);
   }
 
-  // public updateNote(note: any, id: any) {
-  //   return this.http.get('http://localhost:8080/note/fetchNote',this.note,  this.httpOptions);
-  // }
+  public updateNote(note: any) {
+    console.log('inside service' + note.description + 'id' + note.id );
+    return this.http.put('http://localhost:8080/note/update', note,  this.httpOptions);
+  }
+
+  public deleteNote(note: any) {
+    return this.http.delete('http://localhost:8080/note/delete/' + note.id,  this.httpOptions);
+  }
 
 }

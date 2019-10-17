@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { NoteServiceService } from 'src/app/services/note-service.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
@@ -11,8 +11,10 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class EditnoteComponent implements OnInit {
   note;
   noteForm: FormGroup;
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private noteService: NoteServiceService) {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private noteService: NoteServiceService
+  ,           public dialogRef: MatDialogRef<EditnoteComponent>) {
     this.note = this.data;
+
   }
 
 
@@ -24,7 +26,11 @@ export class EditnoteComponent implements OnInit {
     });
   }
   ngOnclose() {
-   console.log(this.noteForm.value);
+     this.dialogRef.close();
+     this.noteService.updateNote(this.note)
+     .subscribe((response: any) => {
+       console.log(response);
+     });
 
 
   }
