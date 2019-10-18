@@ -62,7 +62,7 @@
         <mat-drawer #drawer class="sideNav-sidenav" mode="side" opened>
 
           <div class="firstButton">
-            <button class="notesButton" mat-raised-button>
+            <button class="notesButton" mat-raised-button (click)="navigateToNotes()">
 
               <mat-icon class="noteIcon">lightbulb_outline</mat-icon>
               <span class="note-label">Notes</span>
@@ -111,7 +111,7 @@
           <mat-divider></mat-divider>
 
           <div class="firstButton">
-            <button class="notesButton" mat-raised-button>
+            <button class="notesButton" mat-raised-button (click)="navigateToArchive()">
 
               <mat-icon class="noteIcon">archive</mat-icon>
               <span class="note-label">Archive</span>

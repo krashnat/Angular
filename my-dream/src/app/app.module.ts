@@ -20,6 +20,7 @@ import { FullcomponentComponent } from './components/fullcomponent/fullcomponent
 import { DisplayNotesComponent } from './components/display-notes/display-notes.component';
 import { EditnoteComponent } from './components/editnote/editnote.component';
 import { TrashComponent } from './components/trash/trash.component';
+import { ArchiveComponent } from './components/archive/archive.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { TrashComponent } from './components/trash/trash.component';
     FullcomponentComponent,
     DisplayNotesComponent,
     EditnoteComponent,
-    TrashComponent
+    TrashComponent,
+    ArchiveComponent
   ],
   imports: [
     BrowserModule,

@@ -23,6 +23,13 @@ export class NoteServiceService {
   public getNote() {
     return this.http.get('http://localhost:8080/note/fetchNote',  this.httpOptions);
   }
+  public archiveNote(note: any) {
+    return this.http.post('http://localhost:8080/note/archieve/' + note.id, null,  this.httpOptions);
+  }
+
+  public getArchiveNote() {
+    return this.http.get('http://localhost:8080/note/fetcharchivenote',  this.httpOptions);
+  }
 
   public updateNote(note: any) {
     console.log('inside service' + note.description + 'id' + note.id );
@@ -31,6 +38,14 @@ export class NoteServiceService {
 
   public deleteNote(note: any) {
     return this.http.delete('http://localhost:8080/note/delete/' + note.id,  this.httpOptions);
+  }
+
+
+  public getTrashedNote() {
+    return this.http.get('http://localhost:8080/note/fetchTrashedNote',  this.httpOptions);
+  }
+  public deleteNotePermenently(note: any) {
+    return this.http.delete('http://localhost:8080/note/deletenote/' + note.id,  this.httpOptions);
   }
 
 }

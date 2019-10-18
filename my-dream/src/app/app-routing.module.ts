@@ -10,6 +10,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NoteComponent } from './components/note/note.component';
 import { DisplayNotesComponent } from './components/display-notes/display-notes.component';
 import { TrashComponent } from './components/trash/trash.component';
+import { ArchiveComponent } from './components/archive/archive.component';
 
 
 
@@ -21,11 +22,14 @@ const routes: Routes = [
   { path: 'sendmail', component: PasswordUpdateComponent },
   { path: 'updatePassword/:token', component: UpdateComponent },
   { path: 'informUser', component: InformUserComponent },
-  { path: 'dashboard', component: DashboardComponent,
-  children: [
-    { path: '', component: NoteComponent },
-  { path: 'trash', component: TrashComponent}]
-}];
+  {
+    path: 'dashboard', component: DashboardComponent,
+    children: [
+      { path: '', component: NoteComponent },
+      { path: 'notes', component: NoteComponent },
+      { path: 'trash', component: TrashComponent },
+      { path: 'archive', component: ArchiveComponent }]
+  }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

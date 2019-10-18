@@ -1,32 +1,34 @@
-<div fxLayout="row" fxLayoutAlign="center center">
+<div class="trashedbody" fxLayout="row" fxLayoutAlign="center center">
     <div>
-        <!-- <div *ngFor="let note of listNotes class="noteCard"> -->
+        <div *ngFor="let note of listNotes;let notetempid=index" class="noteCard">
 
-        <mat-card class="matcard" style="margin-left:90px" autocomplete="off" role="combobox" flex="column">
-            <!-- <div (click)="openPopup(note)"> -->
-            <mat-card-title class="content">
-                <textarea class="textArea" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
-                    cdkAutosizeMaxRows="100" placeholder="Title" disabled></textarea>
-            </mat-card-title>
-            <mat-card-content class="content">
-                <textarea class="textArea" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
-                    cdkAutosizeMaxRows="100" placeholder="Description" disabled>Title</textarea>
-            </mat-card-content>
-            <!-- </div> -->
-            <!-- <div ng-mouseover="expand=true" ng-init="expand=false"> -->
-                <!-- <div *ngIf="expand"> -->
-                    <div class="matCardFooter">
-                        <mat-card-footer>
+            <mat-card class="matcard" style="margin-left:90px" autocomplete="off" role="combobox" flex="column">
 
-                            <mat-menu #menu="matMenu">
-                                <button mat-menu-item>Delete Note</button>
-                                <button mat-menu-item>Restore</button>
-                            </mat-menu>
-                        </mat-card-footer>
-                    </div>
-                <!-- </div> -->
-            <!-- </div> -->
-        </mat-card>
-        <!-- </div> -->
+                <mat-card-title class="content">
+                    <textarea class="textArea" cdkTextareaAutosize #autosize="cdkTextareaAutosize"
+                        cdkAutosizeMinRows="1" cdkAutosizeMaxRows="100" placeholder="Title"
+                        disabled>{{note.title}}</textarea>
+                </mat-card-title>
+                <mat-card-content class="content">
+                    <textarea class="textArea" cdkTextareaAutosize #autosize="cdkTextareaAutosize"
+                        cdkAutosizeMinRows="1" cdkAutosizeMaxRows="100" placeholder="Description"
+                        disabled>{{note.description}}</textarea>
+                </mat-card-content>
+
+                <div class="matCardFooter">
+                    <mat-card-footer>
+                        <button mat-icon-button [matMenuTriggerFor]="menu">
+                            <mat-icon>more_vert</mat-icon>
+                        </button>
+                        <mat-menu #menu="matMenu">
+                            <button mat-menu-item (click)="deletenotePemenently(note,notetempid)">Delete Note
+                                Permenantly</button>
+                            <button mat-menu-item (click)="restoreNote(note,notetempid)">Restore</button>
+                        </mat-menu>
+                    </mat-card-footer>
+                </div>
+
+            </mat-card>
+        </div>
     </div>
 </div>

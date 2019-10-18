@@ -37,7 +37,15 @@ export class DisplayNotesComponent implements OnInit {
     this.noteService.deleteNote(note).subscribe((response: any) => {
     console.log('in delete note response' + response.statusCode);
     });
+  }
 
+  archivenote(note, noteindex) {
+    this.noteService.archiveNote(note).subscribe((response: any) => {
+     if (response.statusCode === 200) {
+      this.listNotes.splice(noteindex, 1);
+
+     }
+      });
 
   }
 
