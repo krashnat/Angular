@@ -1,0 +1,44 @@
+<div class="dialog">
+    
+    <div class="fields">
+        <div>
+            <div>Edit Label</div>
+            <div class="formField" fxLayout="row" fxLayoutAlign="center center">
+                <div class="close-button">
+                    <button class="close-button-icon" mat-icon-button>
+                        <mat-icon class="labelIcon">close</mat-icon>
+                    </button>
+                </div>
+                <div class="input-field"> <input matInput class="text" placeholder="Create new label"
+                        autocomplete="off"> </div>
+                <div class="check-button">
+                    <button mat-icon-button>
+                        <mat-icon class="labelIcon">check</mat-icon>
+                    </button>
+                </div>
+            </div>
+            <div *ngFor="let label of labels;let notetempid = index" class="noteCard">
+                <div class="formField" fxLayout="row" fxLayoutAlign="center center">
+                    <div class="close-button">
+                        <button class="close-button-icon" mat-icon-button>
+                            <mat-icon class="labelIcon" >delete</mat-icon>
+                        </button>
+                    </div>
+                    <div class="input-field">
+                        <input matInput class="text" placeholder="Edit label" value={{label.name}} autocomplete="off">
+                    </div>
+                    <div class="check-button">
+                        <button mat-icon-button>
+                            <mat-icon class="labelIcon">check</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="closing-button">
+        <button mat-button>Done</button>
+
+    </div>
+</div>

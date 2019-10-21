@@ -27,6 +27,7 @@ export class NoteServiceService {
     return this.http.post('http://localhost:8080/note/archieve/' + note.id, null,  this.httpOptions);
   }
 
+
   public getArchiveNote() {
     return this.http.get('http://localhost:8080/note/fetcharchivenote',  this.httpOptions);
   }

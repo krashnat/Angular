@@ -1,0 +1,36 @@
+.fields {
+    display: flex;
+    padding: 0px;
+}
+.closebutton {
+    size: 2px;
+}
+.close-button {
+    float: left;
+}
+.input-field{
+    margin-left: 5px;
+    margin-right: 5px;
+    float: left;
+    border: none;
+    
+
+}
+.text{
+    border: none;
+    outline: none;
+    width: 147px;
+    height: 30px;
+    font-family: verdana; 
+    font-size: 14px;
+    }
+.formField{
+    padding-top: 1px;
+}
+.check-button {
+    float: right;
+}
+
+.closing-button {
+    float: right;
+}

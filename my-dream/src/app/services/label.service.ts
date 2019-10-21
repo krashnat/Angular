@@ -6,7 +6,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class LabelService {
   private httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })};
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
 
   constructor(private httpClient: HttpClient) { }
 
@@ -14,5 +15,9 @@ export class LabelService {
   getAllLabels(userId: any) {
     return this.httpClient.get('http://localhost:8080/label/getAllLabel?userId=' + userId, this.httpOptions);
 
+
+  }
+  createLabel(label: any) {
+    return this.httpClient.post('http://localhost:8080/label/create', label, this.httpOptions);
   }
 }

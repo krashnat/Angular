@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { tokenName } from '@angular/compiler';
 import { LabelService } from '../services/label.service';
 import { Router } from '@angular/router';
+import { LabelComponent } from '../components/label/label.component';
+import { MatDialog } from '@angular/material/dialog';
+import { AutofillMonitor } from '@angular/cdk/text-field';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,7 +18,7 @@ export class DashboardComponent implements OnInit {
   popup: boolean;
   token: string;
   constructor(
-    private labelService: LabelService, private router: Router
+    private labelService: LabelService, private router: Router, private dialog: MatDialog
   ) { }
   show = true;
   ngOnInit() {
@@ -46,6 +49,14 @@ export class DashboardComponent implements OnInit {
   }
   navigateToArchive() {
     this.router.navigate(['dashboard/archive']);
+  }
+
+  openPopup(note: any) {
+    const dialogRef = this.dialog.open(LabelComponent, {
+      width: '285px',
+      height: 'Auto',
+      data: this.listLabels
+    });
   }
 
 }

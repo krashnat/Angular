@@ -21,6 +21,7 @@ import { DisplayNotesComponent } from './components/display-notes/display-notes.
 import { EditnoteComponent } from './components/editnote/editnote.component';
 import { TrashComponent } from './components/trash/trash.component';
 import { ArchiveComponent } from './components/archive/archive.component';
+import { LabelComponent } from './components/label/label.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { ArchiveComponent } from './components/archive/archive.component';
     DisplayNotesComponent,
     EditnoteComponent,
     TrashComponent,
-    ArchiveComponent
+    ArchiveComponent,
+    LabelComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +53,7 @@ import { ArchiveComponent } from './components/archive/archive.component';
 
 
   ],
-  entryComponents: [EditnoteComponent],
+  entryComponents: [EditnoteComponent, LabelComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

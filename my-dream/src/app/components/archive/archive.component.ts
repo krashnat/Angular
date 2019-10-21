@@ -20,6 +20,14 @@ export class ArchiveComponent implements OnInit {
     });
 
   }
+  unArchive(note, notetempid) {
+    this.noteService.archiveNote(note).subscribe((response: any) => {
+    if (response.statusCode === 200) {
+      this.listNotes.splice(notetempid, 1);
+    }
+    });
+  }
+
 
 
 }

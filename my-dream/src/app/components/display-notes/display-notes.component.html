@@ -25,7 +25,7 @@
                             <button mat-icon-button>
                                 <mat-icon>insert_photo</mat-icon>
                             </button>
-                            <button mat-icon-button (click)="archivenote(note,notetempid)">
+                            <button mat-icon-button (click)="archivenote(note)">
                                 <mat-icon>archive</mat-icon>
                             </button>
                             <button mat-icon-button>
@@ -35,7 +35,7 @@
                                 <mat-icon>more_vert</mat-icon>
                             </button>
                             <mat-menu #menu="matMenu">
-                                <button  mat-menu-item (click)="deletenote(note,notetempid)">Delete Note</button>
+                                <button  mat-menu-item (click)="deletenote(note)">Delete Note</button>
                                 <button mat-menu-item>Add label</button>
                             </mat-menu>
                         </mat-card-footer>
